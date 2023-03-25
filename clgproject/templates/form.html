@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <style>
+     Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: pink;
+}
+button {
+       background-color: #4CAF50;
+       width: 35%;
+        color: orange;
+        padding: 15px;
+        margin: 10px 0px;
+        border: none;
+        cursor: pointer;
+         }
+ form {
+        border: 3px solid #f1f1f1;
+    }
+ input[type=text], input[type=password] {
+        width: 35%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px solid green;
+        box-sizing: border-box;
+    }
+ button:hover {
+        opacity: 0.7;
+    }
+  .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        margin: 10px 5px;
+    }
+ .container {
+        padding: 25px;
+        background-color: lightblue;
+    }
+    </style>
+    <script>
+var subjectObject = {
+  "Commerce":
+  {
+    "Bcom.CA": [],
+    "Bcom.FT": [],
+
+  },
+  "Nursing":
+  {
+    "BSc. Nursing": [],
+    "MSc. Nursing": [],
+  },
+  "Computer Science":
+  {
+    "BSc. Computer Science": [],
+    "BCA": [],
+  },
+  "Engineering":
+  {
+    "Civil": [],
+    "Mech": [],
+  },
+  "Cyber Forensics":
+  {
+    "BSc. Cyber Forensics": [],
+    "MSc. Cyber forensics": [],
+  }
+}
+window.onload = function() {
+  var departmentSel = document.getElementById("department");
+  var topicSel = document.getElementById("topic");
+
+  for (var x in subjectObject) {
+    department.options[department.options.length] = new Option(x, x);
+  }
+  department.onchange = function() {
+ //empty Chapters- and Topics- dropdowns
+
+ topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+
+  }
+}
+</script>
+</head>
+<body>
+<center>
+<form action="" method="get">
+    {% csrf_token %}
+        <div class="container"><br>
+            <label>Username        : </label>
+            <input type="text" name="username" placeholder="Enter Username" required><br>
+            <label>DOB             : </label>
+            <input type="date" name="DOB" placeholder="Enter DOB" required><br>
+            <label>AGE             :</label>
+            <input type="text" name="AGE" placeholder="Enter AGE" required><br>
+            <label>Gender          :</label>
+                <form>
+                    <label>Male</label>
+                    <input type="radio" name="Male">
+                    <label>Female</label>
+                    <input type="radio" name="Female">
+                </form><br>
+            <label>Ph.No           :</label>
+            <input type="text" name="Ph.NO" placeholder="Enter ph.no" required><br>
+            <label>Email           :</label>
+            <input type="email" name="Email" placeholder="Enter Email" required><br>
+            <label>Address         :</label>
+            <input type="text" name="Address" placeholder="Enter your address"><br>
+            Department: <select name="department" id="department">
+                <option value="" selected="selected">Select department</option>
+              </select>
+              <br><br>
+            Course: <select name="topic" id="topic">
+                <option value="" selected="selected">Please select course</option>
+              </select>
+              <br><br>
+            <label>Purpose        :</label>
+            <select>
+                <option value="For Enquiry">For Enquiry</option>
+                <option value="Place Order">Place Order</option>
+                <option value="Return">Return</option>
+            </select><br>
+            <label>Materials Provide :</label>
+                <input type="checkbox" id="pen" name="pen">
+                <label for="pen">Pen</label>
+                <input type="checkbox" id="book" name="book">
+                <label for="pen">Book</label>
+                <input type="checkbox" id="exam peppers" name="exam peppers">
+                <label for="pen">Exam papers</label><br>
+                <a href="message" class="btn btn-secondary bth-block my_custom_button">Submit</a>
+        </div>
+</form>
+</center>
+</body>
+</html>

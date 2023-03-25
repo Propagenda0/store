@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>about</title>
+</head>
+<style>
+    Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: cyan;
+}
+</style>
+<body>
+<center>
+    <br>
+    <br>
+<h1>This is a demo website</h1>
+    <h3>Meet creator</h3>
+
+<div class="row team_row">
+				<div class="col-xl-3 col-md-6 team_col">
+					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+						<div class="team_image"><img src="{% static 'images/IMG_3729.jpg' %}" alt="" width="200px" height="200px"></div>
+                    </div>
+				</div>
+			</div>
+    <h4>Dennice Sam</h4>
+    <br>
+    <a href="/" class="btn btn-secondary bth-block my_custom_button">Go back</a>
+    </center>
+</body>
+</html>

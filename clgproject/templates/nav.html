@@ -1,0 +1,33 @@
+
+<nav class="main_nav">
+  <ul class="d-flex flex-row align-items-start justify-content-start">
+    <li><a href="/">Home</a></li>
+
+    <li><a href="credentials/about">About us</a></li>
+    {% if user.is_authenticated %}
+    <li><a>Hello {{user.username}}</a></li>
+    <li><a href="credentials/form">Form</a></li>
+    <li><a href="credentials/logout">Logout</a></li>
+    {% else %}
+    <li><a href="credentials/register">Register</a></li>
+    <li><a href="credentials/login">Login</a></li>
+    {% endif %}
+    <div class="dropdown">
+      <a class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Department
+      </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Bachelor_of_Arts">BA English</a>
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Fishery">Fisheries </a>
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Commerce">Commerce</a>
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Nursing">Nursing</a>
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Computer_science">Computer science</a>
+
+        </div>
+    </div>
+  </ul>
+
+
+
+
+</nav>
